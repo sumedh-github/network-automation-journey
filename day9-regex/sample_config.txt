@@ -1,0 +1,15 @@
+interface GigabitEthernet0/1
+ description Uplink to Core
+ ip address 10.1.1.1 255.255.255.0
+ switchport access vlan 20
+!
+interface GigabitEthernet0/2
+ description Server Port
+ ip address 10.1.1.2 255.255.255.0
+ switchport access vlan 30
+!
+interface Loopback0
+ ip address 10.255.255.1 255.255.255.255
+!
+router bgp 65001
+ neighbor 10.1.1.254 remote-as 65002
