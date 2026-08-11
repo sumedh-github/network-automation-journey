@@ -17,7 +17,7 @@ def parse_line(line):
         print(f"Skipping malformed line: '{line}' — {e}")
         return None
 
-def parse_insterface(filename):
+def parse_interface(filename):
     interfaces = []
     with open(filename, "r") as f:
         for line in f:
@@ -37,6 +37,6 @@ def parse_insterface(filename):
 
 
 if __name__ == "__main__":
-    results = parse_insterface("sample_interfaces.txt")
+    results = parse_interface("sample_interfaces.txt")
     for entry in results:
         print(entry)
